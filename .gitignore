@@ -1,0 +1,39 @@
+node_modules# Dependencias y builds
+/node_modules
+/.next
+/out
+/.svelte-kit
+/build
+/dist
+/.cache
+.turbo
+
+# Variables de entorno
+*.env*
+!.env.example
+
+# Testing
+/coverage
+/junit.xml
+
+# Misceláneos
+*.log
+*.tmp
+*.pid
+*.seed
+*.pid.lock
+
+# Editor
+.idea
+.vscode/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db

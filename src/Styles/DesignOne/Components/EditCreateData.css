@@ -1,0 +1,359 @@
+.design-one .registration-form {
+  background-color: var(--fondo2);
+  padding: clamp(15px, 3vw, 30px);
+  margin: 2vh auto;
+  border-radius: clamp(15px, 2vw, 25px);
+  font-family: var(--fuenteSecundaria);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.411);
+  box-sizing: border-box;
+  width: clamp(90%, 95vw, 100%);
+  max-width: 1400px;
+  height: auto;
+  overflow-y: visible;
+}
+
+/* Encabezado */
+.design-one .registration-form .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+.design-one .btn-closed {
+  background-color: var(--primario2);
+  color: var(--colorFuente1);
+  border-radius: 50%;
+  width: clamp(30px, 5vw, 35px);
+  height: clamp(30px, 5vw, 35px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Formulario como cuadrícula */
+.design-one .registration-form form {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(250px, 30vw, 350px), 1fr)
+  );
+  gap: clamp(10px, 2vw, 20px);
+}
+
+/* Estilo de campos */
+.design-one .label-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Aseguramos que ocupe todo el ancho de la columna */
+}
+
+.design-one .label-input label {
+  font-weight: bold;
+  font-family: var(--fuenteSecundaria);
+  margin-bottom: clamp(3px, 1vw, 5px);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--colorFuente1);
+}
+
+.design-one .label-input input,
+.design-one .label-input select,
+.design-one .label-input textarea {
+  width: 100%; /* Se adapta al ancho del contenedor .label-input */
+  max-width: 100%; /* Evita desbordamiento */
+  padding: clamp(8px, 1.5vw, 10px);
+  border-radius: clamp(8px, 1vw, 10px);
+  border: 1px solid var(--secundario2);
+  font-family: var(--fuenteTerciaria);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  background-color: var(--fondo1);
+  color: var(--colorFuente1);
+  box-sizing: border-box;
+}
+
+.design-one .label-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.design-one .label-input input::-webkit-outer-spin-button,
+.design-one .label-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.design-one .label-input textarea {
+  min-height: clamp(50px, 10vw, 60px);
+  resize: vertical;
+}
+
+/* Inputs de imagen */
+.design-one .label-input-image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.design-one .label-input-image input {
+  width: 100%; /* También se adapta */
+  max-width: 100%;
+  margin-top: clamp(3px, 1vw, 5px);
+}
+
+.design-one .label-input-image img {
+  max-width: clamp(100px, 20vw, 120px);
+  margin-top: clamp(5px, 1vw, 10px);
+  border-radius: clamp(8px, 1vw, 10px);
+}
+
+/* Checkbox */
+.design-one .label-input input[type="checkbox"] {
+  width: auto; /* Excepción para checkbox */
+  margin-right: clamp(5px, 1vw, 10px);
+}
+
+/* Errores */
+.design-one .text-danger {
+  color: red;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  margin-top: clamp(3px, 1vw, 5px);
+}
+
+/* Botón */
+.design-one .btn-add {
+  grid-column: span 2;
+  width: clamp(20%, 40vw, 300px); /* Ajustamos el ancho del botón */
+  margin: clamp(10px, 2vw, 20px) auto 0;
+  padding: clamp(10px, 2vw, 12px);
+  border-radius: clamp(8px, 1vw, 10px);
+  background-color: var(--primario2);
+  color: var(--colorFuente1);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  border: none;
+  cursor: pointer;
+}
+.design-one .modal-dialog {
+  max-width: clamp(500px, 80vw, 600px);
+  margin: 1.75rem auto !important;
+}
+
+.design-one .modal-dialog .modal-content {
+  background-color: var(--fondo2);
+  border-radius: clamp(12px, 2vw, 16px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: var(--fuenteSecundaria);
+  margin: auto;
+}
+
+.design-one .modal-header {
+  border-bottom: 1px solid var(--secundario2);
+  padding: clamp(12px, 2vw, 16px);
+  background-color: var(--fondo1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.design-one .modal-header .modal-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--colorFuente1);
+  font-weight: 600;
+}
+
+.design-one .modal-body {
+  padding: clamp(16px, 3vw, 20px);
+}
+
+.design-one .talle-row {
+  margin-bottom: clamp(12px, 2vw, 16px);
+  padding: clamp(8px, 1.5vw, 12px);
+  border: 1px solid var(--secundario2);
+  border-radius: clamp(8px, 1vw, 10px);
+  background-color: var(--fondo1);
+}
+
+.design-one .talle-inputs {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 12px);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.design-one .modal-dialog .input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.design-one .modal-dialog .input-group label {
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  color: var(--colorFuente1);
+  margin-bottom: clamp(4px, 1vw, 6px);
+  font-weight: 500;
+}
+
+.design-one .modal-dialog .input-group select,
+.design-one .modal-dialog .input-group input {
+  width: 100%;
+  padding: clamp(6px, 1.2vw, 8px);
+  border-radius: clamp(6px, 1vw, 8px);
+  border: 1px solid var(--secundario2);
+  background-color: var(--fondo2);
+  color: var(--colorFuente1);
+  font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+  font-family: var(--fuenteTerciaria);
+  transition: border-color 0.2s ease;
+}
+
+.design-one .modal-dialog .input-group input:disabled {
+  background-color: var(--fondo3);
+  opacity: 0.7;
+}
+
+.design-one .modal-dialog .input-group select:focus,
+.design-one .modal-dialog .input-group input:focus {
+  outline: none;
+  border-color: var(--primario2);
+  box-shadow: 0 0 4px rgba(var(--primario2-rgb), 0.3);
+}
+
+.design-one .talle-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.design-one .modal-actions {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 12px);
+  justify-content: flex-start;
+}
+
+.design-one .modal-dialog .btn {
+  padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 16px);
+  border-radius: clamp(6px, 1vw, 8px);
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.design-one .modal-dialog .btn-primary {
+  background-color: var(--primario2);
+  color: var(--colorFuente1);
+}
+
+.design-one .modal-dialog .btn-primary:hover {
+  background-color: var(--primario1);
+  transform: translateY(-1px);
+}
+
+.design-one .modal-dialog .btn-secondary {
+  background-color: var(--secundario2);
+  color: var(--colorFuente1);
+}
+
+.design-one .modal-dialog .btn-secondary:hover {
+  background-color: var(--secundario1);
+  transform: translateY(-1px);
+}
+
+.design-one .modal-dialog .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.design-one .modal-dialog .btn-danger:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.design-one .no-talles {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--colorFuente1);
+  text-align: center;
+  margin: clamp(12px, 2vw, 16px) 0;
+}
+/* Media queries para responsividad */
+@media (max-width: 1024px) {
+  .design-one .registration-form form {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .design-one .registration-form {
+    max-height: 85vh;
+    padding: clamp(50px, 8vw, 40px);
+    overflow-y: auto;
+    max-width: 80%;
+    border-radius: 40px;
+  }
+
+  .design-one .registration-form form {
+    grid-template-columns: 1fr; /* Una columna */
+    overflow-y: visible; /* Sin barra, ajustado previamente */
+  }
+
+  .design-one .btn-add {
+    grid-column: 1; /* Ajustamos para una sola columna */
+  }
+  .design-one .talle-inputs {
+    flex-direction: column;
+    gap: clamp(6px, 1.2vw, 10px);
+  }
+
+  .design-one .modal-actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .design-one .btn-closed {
+    margin-top: -80px !important;
+    margin-right: -30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-one .registration-form {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .design-one .label-input label {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+  }
+
+  .design-one .label-input input,
+  .design-one .label-input select,
+  .design-one .label-input textarea {
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+  }
+
+  .design-one .btn-closed {
+    width: 50px;
+    height: 50px;
+    margin-top: -70px !important;
+    margin-right: -40px !important;
+  }
+  .design-one .modal-dialog {
+    max-width: 90%;
+  }
+
+  .design-one .talle-row {
+    padding: clamp(6px, 1.2vw, 8px);
+  }
+
+  .design-one .modal-dialog .input-group label {
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  }
+
+  .design-one .modal-dialog .input-group select,
+  .design-one .modal-dialog .input-group input {
+    font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  }
+
+  .design-one .modal-dialog .btn {
+    font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    padding: clamp(6px, 1.2vw, 8px) clamp(10px, 1.8vw, 12px);
+  }
+}

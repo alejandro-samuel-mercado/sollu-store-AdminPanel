@@ -1,0 +1,290 @@
+
+/* Estilos generales */
+.design-two .navbar {
+  background-color: var(--fondo1); 
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); 
+  padding: 0.5rem 1rem; 
+  position: fixed; /* Fijo en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  transition: all 0.3s ease-in-out;
+  font-family: var(--fuentePrimaria);
+}
+
+/* Estado flotante (cuando se hace scroll) */
+.design-two .navbar.floating {
+  background-color: rgba(255, 255, 255, 0.98); /* Fondo ligeramente translúcido */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Estado oculto (cuando se hace scroll hacia abajo) */
+.design-two .navbar.hidden {
+  transform: translateY(-100%); /* Se oculta deslizándose hacia arriba */
+}
+
+/* Contenedor del contenido del navbar */
+.design-two .navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Ancho máximo para centrar el contenido */
+  margin: 0 auto; /* Centrado horizontal */
+  height: 50px; /* Altura fija para un diseño más compacto */
+}
+
+/* Logo */
+.design-two .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.design-two .navbar-logo {
+  height: 30px; /* Tamaño más pequeño y elegante para el logo */
+  width: auto;
+  object-fit: contain; /* Asegura que el logo no se distorsione */
+  transition: transform 0.3s ease; /* Animación suave al interactuar */
+}
+
+.design-two .navbar-logo:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+/* Fallback para el logo si la imagen no carga */
+.design-two .navbar-logo[src=""],.design-two .navbar-logo:not([src]) {
+  content: url('https://via.placeholder.com/30'); /* Imagen de respaldo */
+}
+
+/* Lado izquierdo del navbar (enlaces) */
+.design-two .navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.design-two .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espacio más amplio entre los enlaces para un look limpio */
+  margin: 0; /* Eliminamos márgenes por defecto */
+}
+
+.design-two .nav-item {
+  position: relative; /* Para el dropdown */
+}
+
+.design-two .nav-link {
+  font-family: var(--fuenteSecundaria);
+  color: var(--terciario); /* Color oscuro para contraste */
+  font-size: 1rem; /* Tamaño de fuente más pequeño y elegante */
+  font-weight: 500; /* Peso medio para un look moderno */
+  text-transform: uppercase; /* Estilo común en las imágenes */
+  padding: 0.3rem 0; /* Espaciado interno reducido */
+  transition: color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.design-two .nav-link:hover {
+  color: #e67e22; /* Color naranja cálido para el hover */
+  transform: translateY(-1px); /* Efecto de elevación sutil */
+}
+
+/* Dropdown */
+.design-two .dropdown-toggle::after {
+  margin-left: 0.3rem;
+  border: none; /* Eliminamos el borde por defecto de Bootstrap */
+  content: "\f078"; /* Icono de chevron-down de Bootstrap Icons */
+  font-family: var(--fuenteSecundaria);
+  font-size: 0.6rem;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.design-two .dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg); /* Rotamos el icono cuando el dropdown está abierto */
+}
+
+.design-two .dropdown-menu {
+  background-color: var(--fondo2);
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.4rem 0;
+  margin-top: 0.5rem;
+  animation: slideDown 0.3s ease-in-out; /* Animación de deslizamiento */
+}
+
+.design-two .dropdown-item {
+    font-family: var(--fuenteSecundaria);
+  color:var(--primario1);
+  font-size: 0.85rem;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.design-two .dropdown-item:hover {
+  background-color: var(--secundario1);
+  color: #e67e22;
+}
+
+/* Lado derecho del navbar (íconos, login, carrito) */
+.design-two .items-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio más amplio entre elementos */
+}
+
+/* Estilo del enlace de login */
+.design-two .items-right .nav-link {
+  font-size: 0.9rem; /* Tamaño más pequeño */
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.design-two .items-right .nav-link:hover {
+  background-color: #f5f5f5; /* Fondo claro al pasar el mouse */
+  color: #e67e22;
+}
+
+
+/* Estilos del Menú Expandible */
+.design-two .expandable-menu {
+  position: relative;
+  display: block; /* Mostramos el menú expandible en todas las resoluciones */
+}
+
+/* Botón del menú expandible */
+.design-two .expandable-btn {
+  background-color: transparent;
+  border: none; /* Sin borde */
+  padding: 0; /* Sin padding */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; 
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Ícono dentro del botón */
+.design-two .expandable-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain; 
+}
+
+
+.design-two .expandable-btn::before {
+  content: "\f0c9"; /* Icono de menú de Bootstrap Icons */
+  font-family: "bootstrap-icons";
+  font-size: 1rem;
+  color: var(--terciario);
+  display: none; /* Oculto por defecto */
+}
+
+/* Mostrar el ícono de Bootstrap si la imagen no está presente */
+.design-two .expandable-btn img[src=""],.design-two  .expandable-btn img:not([src]) {
+  display: none; /* Ocultamos la imagen si no carga */
+}
+
+.design-two .expandable-btn img[src=""] + ::before,
+.design-two .expandable-btn img:not([src]) + ::before {
+  display: block; /* Mostramos el ícono de Bootstrap */
+}
+
+/* Efecto hover para el botón */
+.design-two .expandable-btn:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+
+.design-two .menu-btn{
+  color:var(--terciario);
+  font-family: var(--fuenteSecundaria);
+  display: flex;
+align-items: center;
+  border: none;
+  background: transparent;
+}
+
+
+.design-two .menu-btn p{
+margin: auto;
+margin-left: 8px;
+}
+
+
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (min-width: 992px) {
+.design-two   .navbar-nav {
+    display: flex; /* Mostramos los enlaces del navbar */
+  }
+
+  /* Ya no ocultamos el menú expandible, se muestra en todas las resoluciones */
+ .design-two  .expandable-menu {
+    display: block; /* Aseguramos que el botón sea visible */
+  }
+}
+
+@media (max-width: 991px) {
+ .design-two  .navbar-nav {
+    display: none; /* Ocultamos los enlaces del navbar en pantallas pequeñas */
+  }
+
+ .design-two  .expandable-menu {
+    display: block; /* Mostramos el menú expandible en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+ .design-two  .navbar {
+    padding: 0.4rem 0.8rem; /* Reducimos el padding */
+  }
+
+ .design-two  .navbar-logo {
+    height: 25px; /* Logo más pequeño en móviles */
+  }
+
+ .design-two  .nav-link {
+    font-size: 0.85rem; /* Fuente más pequeña */
+  }
+
+ .design-two  .cart-icon {
+    height: 18px; /* Ícono más pequeño */
+  }
+
+ .design-two  .items-right {
+    gap: 0.8rem; /* Espacio más pequeño */
+  }
+
+ .design-two  .expandable-btn {
+    width: 20px; /* Botón más pequeño en móviles */
+    height: 20px;
+  }
+
+ .design-two  .expandable-btn img {
+    width: 16px; /* Ícono más pequeño en móviles */
+    height: 16px;
+  }
+
+ .design-two  .menu-content {
+    width: 180px; /* Ancho más pequeño en móviles */
+  }
+
+ .design-two  .menu-content .nav-link {
+    font-size: 0.85rem; /* Fuente más pequeña en móviles */
+  }
+}

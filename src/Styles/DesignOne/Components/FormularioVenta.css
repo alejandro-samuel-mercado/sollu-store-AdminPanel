@@ -1,0 +1,204 @@
+.design-one .formulario-venta {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--fondo1);
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.411);
+}
+.design-one .ver-ventas {
+  text-align: center;
+  margin: 10px auto 0 auto;
+  max-height: 10vh;
+}
+
+.design-one .ver-ventas-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background: var(--primario1);
+  color: var(--colorFuentePrimaria);
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.design-one .ver-ventas-button:hover {
+  background: var(--primario2);
+  transform: translateY(-3px);
+}
+
+.design-one .ver-ventas-button svg {
+  font-size: 1.5rem;
+}
+
+.design-one .formulario-venta h2 {
+  text-align: center;
+  color: var(--terciario);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.design-one .seccion {
+  margin-bottom: 30px;
+  font-family: var(--fuenteSecundaria) !important;
+}
+
+.design-one .seccion h3 {
+  font-family: var(--fuenteSecundaria);
+  color: var(--terciario);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.design-one .form-control,
+.design-one .form-select {
+  background: #ffffffe7;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #cccdceda;
+}
+
+.design-one .form-control:focus,
+.design-one .form-select:focus {
+  border-color: var(--primario2);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.design-one .form-check {
+  font-family: var(--fuenteSecundaria);
+  margin-bottom: 20px;
+}
+
+.design-one .lista-usuarios,
+.design-one .lista-productos {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: var(--fondo4);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.design-one .lista-productos {
+  max-height: 100vh !important;
+}
+
+.design-one .usuario,
+.design-one .producto {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.design-one .usuario:hover,
+.design-one .producto:hover {
+  background-color: var(--fondo3);
+}
+
+.design-one .tachado {
+  text-decoration: line-through;
+}
+
+.design-one .productos-seleccionados .producto-seleccionado {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: var(--fondo3);
+}
+
+.sub-total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-final {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fondo3);
+  border-radius: 10px;
+  border: solid 2px var(--fondo4);
+  margin: auto;
+  margin-left: 20%;
+  padding: 20px 50px;
+}
+.price-final h3 {
+  color: var(--primario1) !important;
+}
+.price-final p {
+  font-size: 1.7rem;
+}
+
+.design-one .error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin: 2px 0 -10px 0;
+  min-height: 10px;
+}
+
+.design-one .success {
+  color: #28a745;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.design-one .general-error {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.design-one .btn-enviar-venta {
+  display: flex;
+  margin-left: 35%;
+  width: 30% !important;
+  justify-content: center;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.design-one .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.design-one .text-muted {
+  background-color: #007bff85;
+}
+
+.design-one .react-datepicker__input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .design-one .formulario-venta {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .design-one .seccion h3 {
+    font-size: 1.2rem;
+  }
+
+  .design-one .form-control,
+  .design-one .form-select {
+    font-size: 0.9rem;
+  }
+
+  .design-one .btn-enviar {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,797 @@
+/* Contenedor principal */
+.design-one .mi-cuenta-container {
+  padding: 120px 0 0 25px;
+  min-height: 80vh;
+  max-width: 100% !important;
+  background: var(--fondo3);
+  font-family: var(--fuentePrimaria), sans-serif;
+  overflow: hidden;
+}
+
+/* Sección izquierda (perfil del usuario) */
+.design-one .mi-cuenta-container .left {
+  background-color: var(--fondo1);
+  border-right: none;
+  padding: 40px 20px;
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.514);
+}
+
+/* Avatar y datos del usuario */
+.design-one .mi-cuenta-container .left .text-center {
+  text-align: center;
+}
+
+.design-one .mi-cuenta-container .left img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid var(--primario1);
+}
+
+/* Nombre del usuario */
+.design-one .mi-cuenta-container .left h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--terciario);
+  margin: auto 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+/* Puntos del usuario */
+.design-one .mi-cuenta-container .left .text-muted {
+  font-size: 1rem; /* Tamaño más legible */
+  color: var(--terciario); /* Color gris oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Espacio entre ícono y texto */
+}
+
+/* Botón de cerrar sesión */
+.design-one .mi-cuenta-container .btn-close-session {
+  background-color: #dc3545; /* Fondo rojo */
+  color: #fff; /* Texto blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: 500; /* Peso más definido */
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  margin-top: 20px; /* Espacio arriba */
+}
+
+.design-one .mi-cuenta-container .btn-close-session:hover {
+  background-color: #c82333; /* Fondo rojo más oscuro */
+  transform: translateY(-3px); /* Elevación sutil */
+}
+
+/* Sección derecha (contenido principal) */
+.design-one .mi-cuenta-container .right {
+  border-radius: 15px;
+  background-color: var(--fondo1);
+  padding: 40px;
+  margin: 0;
+}
+
+/* Títulos de las secciones */
+.design-one .mi-cuenta-container .right h2 {
+  font-size: 1.5rem; /* Tamaño igual que recommendations-title */
+  font-weight: 600; /* Peso más definido */
+  color: var(--terciario); /* Color oscuro */
+  margin-bottom: 20px; /* Espacio debajo */
+  text-transform: uppercase; /* Estilo común */
+}
+
+/* Tarjetas (perfil, historial de compras, etc.) */
+.design-one .mi-cuenta-container .card {
+  background: var(--fondo2); /* Fondo claro */
+  font-family: var(--fuenteSecundaria);
+  border: none; /* Mantenemos sin borde */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.541); /* Sombra más suave */
+  border-radius: 10px; /* Bordes redondeados */
+  margin-bottom: 20px; /* Espacio debajo */
+  overflow-y: auto; /* Mantenemos el scroll si es necesario */
+}
+
+/* Cuerpo de la tarjeta */
+.design-one .mi-cuenta-container .card-body {
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Títulos dentro de las tarjetas */
+.design-one .mi-cuenta-container .card-title {
+  color: var(--terciario) !important;
+  font-size: 1.1rem; /* Tamaño más pequeño y elegante */
+  font-weight: 500; /* Peso más definido */
+  margin-bottom: 8px; /* Espacio debajo */
+}
+
+/* Texto dentro de las tarjetas */
+.design-one .mi-cuenta-container .card-text {
+  font-family: var(--fuenteSecundaria);
+  font-size: 1rem; /* Tamaño más legible */
+  color: var(--terciario) !important; /* Color gris oscuro */
+  margin-bottom: 8px; /* Espacio debajo */
+}
+
+/* Lista de detalles de compra */
+.design-one .mi-cuenta-container .list-group-flush {
+  background: var(--fondo1); /* Fondo más claro para los ítems */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Ítems de la lista */
+.design-one .mi-cuenta-container .list-group-item {
+  font-size: 0.9rem; /* Tamaño más pequeño */
+  color: var(--terciario); /* Color gris oscuro */
+  border: none; /* Sin bordes */
+  padding: 10px 20px; /* Espaciado interno */
+}
+
+/* Botón de editar perfil */
+.design-one .btn-edit-perfil {
+  display: block; /* Centrado */
+  margin: 0 auto 20px; /* Espacio debajo */
+  width: 150px; /* Ancho fijo */
+  padding: 10px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  color: var(--colorFuentePrimaria); /* Texto blanco */
+  background: var(--primario1); /* Fondo azul */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.design-one .btn-edit-perfil:hover {
+  background: var(--primario2); /* Fondo azul más claro */
+  transform: translateY(-3px); /* Elevación sutil */
+}
+
+/* Modal de edición */
+.design-one .mi-cuenta-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Mantenemos el z-index */
+}
+
+/* Contenedor del modal */
+.design-one .modal-edit-perfil {
+  font-family: var(--fuenteSecundaria);
+  background: var(--fondo1); /* Fondo blanco */
+  padding: 30px; /* Espaciado interno más amplio */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 100%;
+  max-width: 500px; /* Ancho máximo */
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+}
+
+/* Botón de cerrar el modal */
+.design-one .modal-edit-perfil .btn-closed-perfil {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #dc3545; /* Fondo rojo */
+  color: #fff; /* Texto blanco */
+  border: none;
+  border-radius: 50%; /* Forma circular */
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1rem; /* Tamaño de fuente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease; /* Transición suave */
+}
+
+.design-one .modal-edit-perfil .btn-closed-perfil:hover {
+  background: #c82333; /* Fondo rojo más oscuro */
+}
+
+/* Título del modal */
+.design-one .modal-edit-perfil h3 {
+  font-size: 1.5rem; /* Tamaño igual que los títulos de sección */
+  font-weight: 600; /* Peso más definido */
+  color: var(--terciario); /* Color oscuro */
+  margin-bottom: 20px; /* Espacio debajo */
+  text-align: center; /* Centrado */
+  text-transform: uppercase; /* Estilo común */
+}
+
+/* Grupos de formulario */
+.design-one .modal-edit-perfil .form-group {
+  margin-bottom: 20px; /* Espacio más amplio */
+}
+
+/* Etiquetas del formulario */
+.design-one .modal-edit-perfil .form-group label {
+  display: block;
+  margin-bottom: 8px; /* Espacio debajo */
+  font-weight: 500; /* Peso más definido */
+  color: var(--terciario); /* Color oscuro */
+  font-size: 1rem; /* Tamaño de fuente */
+}
+
+/* Campos del formulario */
+.design-one .modal-edit-perfil .form-control {
+  width: 100%;
+  padding: 10px; /* Espaciado interno más amplio */
+  border: 1px solid var(--fondo4); /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto focus para los campos */
+.design-one .modal-edit-perfil .form-control:focus {
+  border-color: var(--primario1); /* Borde azul */
+  box-shadow: 0 0 8px rgba(72, 82, 149, 0.2); /* Sombra suave */
+  outline: none;
+}
+
+/* Ajuste para el select */
+.design-one .modal-edit-perfil .form-control[as="select"] {
+  padding: 10px; /* Ajustamos el padding */
+}
+
+/* Botón de guardar cambios */
+.design-one .modal-edit-perfil .btn-save-changes {
+  background: var(--primario1); /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: 500; /* Peso más definido */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  display: block; /* Centrado */
+  margin: 0 auto; /* Centrado */
+  width: 200px; /* Ancho fijo */
+}
+
+.design-one .modal-edit-perfil .btn-save-changes:hover {
+  background: var(--primario2); /* Fondo azul más claro */
+  transform: translateY(-3px); /* Elevación sutil */
+}
+
+/* Sección de reseñas */
+.design-one .mi-cuenta-container .review-section {
+  background-color: var(--fondo2); /* Fondo claro */
+  padding: 30px; /* Espaciado interno más amplio */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 40px 0; /* Espacio vertical */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+/* Tarjeta de reseña */
+.design-one .mi-cuenta-container .review-card {
+  background-color: var(--fondo1); /* Fondo blanco */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 20px; /* Espacio debajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto; /* Ajustamos la altura */
+  max-height: 300px; /* Altura máxima */
+}
+
+/* Imagen de la reseña */
+.design-one .mi-cuenta-container .review-card img {
+  width: 60px; /* Tamaño más pequeño */
+  height: 60px;
+  border-radius: 50%; /* Forma circular */
+  margin-bottom: 15px; /* Espacio debajo */
+}
+
+/* Calificación */
+.design-one .mi-cuenta-container .rating {
+  color: #ffc107; /* Color amarillo */
+  font-size: 1.2rem; /* Tamaño más pequeño */
+  margin: 10px 0; /* Espacio vertical */
+}
+
+/* Comentario de la reseña */
+.design-one .mi-cuenta-container .review-card p {
+  font-size: 0.9rem; /* Tamaño más pequeño */
+  color: var(--terciario); /* Color gris oscuro */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Sección de recomendaciones */
+.design-one .recommendations-section {
+  margin-top: 0; /* Mantenemos el margen */
+  padding: 30px; /* Espaciado interno más amplio */
+  background: var(--fondo2); /* Fondo claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Cuadrícula de recomendaciones */
+.design-one .recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 250px)
+  ); /* Mantenemos la cuadrícula */
+  gap: 20px; /* Espacio entre tarjetas */
+  justify-content: center; /* Centrado */
+}
+
+/* Tarjeta de recomendación */
+.design-one .recommendation-card {
+  background: var(--fondo1); /* Fondo blanco */
+  border: none; /* Eliminamos el borde */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  animation: fadeInUp 0.5s ease-out forwards; /* Animación de entrada */
+}
+
+/* Efecto hover para la tarjeta de recomendación */
+.design-one .recommendation-card:hover {
+  transform: translateY(-5px); /* Elevación sutil */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Imagen de la recomendación */
+.design-one .recommendation-image {
+  width: 100%;
+  height: 150px; /* Altura más pequeña */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para la imagen */
+.design-one .recommendation-card:hover .recommendation-image {
+  transform: scale(1.05); /* Escalado sutil */
+}
+
+/* Información de la recomendación */
+.design-one .recommendation-info {
+  font-family: var(--fuenteSecundaria);
+  padding: 15px; /* Espaciado interno */
+  text-align: center; /* Centrado */
+}
+
+/* Nombre del producto */
+.design-one .recommendation-name {
+  font-family: var(--fuenteSecundaria);
+  font-size: 1.1rem; /* Tamaño igual que antes */
+  font-weight: 500; /* Peso igual que antes */
+  color: var(--fondo1); /* Color oscuro */
+  margin: 0 0 8px; /* Espacio debajo */
+}
+
+/* Precio del producto */
+.design-one .recommendation-price {
+  font-family: var(--fuenteSecundaria);
+  font-size: 1rem; /* Tamaño igual que antes */
+  font-weight: 600; /* Peso igual que antes */
+  color: var(--secundario2); /* Color verde oscuro */
+  margin: 0 0 8px; /* Espacio debajo */
+}
+
+/* Puntos del producto */
+.design-one .recommendation-points {
+  font-size: 0.9rem; /* Tamaño igual que antes */
+  color: var(--fondo5); /* Color gris */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* Espacio entre ícono y texto */
+  margin: 0 0 10px; /* Espacio debajo */
+}
+
+/* Botón de ver detalles */
+.design-one .view-details-button {
+  background: var(--primario1); /* Fondo azul */
+  border: none; /* Sin borde */
+  color: #fff; /* Texto blanco */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  font-weight: 500; /* Peso más definido */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para el botón de ver detalles */
+.design-one .view-details-button:hover {
+  background: var(--primario2); /* Fondo azul más claro */
+  transform: translateY(-3px); /* Elevación sutil */
+}
+
+/* Mensaje de no recomendaciones */
+.design-one .no-recommendations {
+  font-size: 1rem; /* Tamaño igual que antes */
+  color: var(--fondo5); /* Color gris */
+  text-align: center;
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Controles de paginación */
+.design-one .pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Espacio arriba */
+  gap: 15px; /* Espacio entre elementos */
+}
+
+/* Botones de paginación */
+.design-one .pagination-controls .btn {
+  background-color: var(--primario1); /* Fondo azul */
+  border: none;
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  color: var(--colorFuentePrimaria); /* Texto blanco */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones de paginación */
+.design-one .pagination-controls .btn:hover {
+  background-color: var(--primario2); /* Fondo azul más claro */
+  transform: translateY(-3px); /* Elevación sutil */
+}
+
+/* Botón deshabilitado */
+.design-one .pagination-controls .btn:disabled {
+  background-color: #cccccc; /* Fondo gris */
+  cursor: not-allowed;
+}
+
+/* Información de paginación */
+.design-one .pagination-info {
+  font-size: 1rem; /* Tamaño más legible */
+  color: var(--terciario); /* Color oscuro */
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 1100px) {
+  .design-one .mi-cuenta-container .left img {
+    width: 90px;
+    height: 90px;
+  }
+  .design-one .mi-cuenta-container .left h5 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .design-one .mi-cuenta-container .left h5 {
+    font-size: 0.7rem;
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .design-one .mi-cuenta-container {
+    flex-direction: column;
+    padding: 0;
+    border-radius: 15px;
+    min-height: 70vh;
+    max-width: 90% !important;
+  }
+
+  .design-one .mi-cuenta-container .left {
+    padding: 15px;
+    margin: auto;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .design-one .mi-cuenta-container .right {
+    padding: 20px; /* Reducimos el padding */
+  }
+
+  .design-one .mi-cuenta-container .left img {
+    width: 100px; /* Reducimos el tamaño del avatar */
+    height: 100px;
+  }
+
+  .design-one .mi-cuenta-container .left h5 {
+    font-size: 1.1rem; /* Reducimos el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .left .text-muted {
+    font-size: 0.9rem; /* Reducimos el tamaño del texto */
+  }
+
+  .design-one .mi-cuenta-container .btn-close-session {
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    padding: 8px 16px; /* Reducimos el padding */
+  }
+
+  .design-one .mi-cuenta-container .right h2 {
+    font-size: 1.3rem; /* Reducimos el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .card-title {
+    font-size: 1rem; /* Reducimos el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .card-text {
+    font-size: 0.9rem; /* Reducimos el tamaño del texto */
+  }
+
+  .design-one .mi-cuenta-container .list-group-item {
+    font-size: 0.85rem; /* Reducimos el tamaño del texto */
+  }
+
+  .design-one .btn-edit-perfil {
+    width: 120px; /* Reducimos el ancho */
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    padding: 8px; /* Reducimos el padding */
+  }
+
+  .design-one .modal-edit-perfil {
+    padding: 20px; /* Reducimos el padding */
+    max-width: 90%; /* Ajustamos el ancho */
+  }
+
+  .design-one .modal-edit-perfil h3 {
+    font-size: 1.3rem; /* Reducimos el tamaño del título */
+  }
+
+  .design-one .modal-edit-perfil .form-group label {
+    font-size: 0.9rem; /* Reducimos el tamaño de la etiqueta */
+  }
+
+  .design-one .modal-edit-perfil .form-control {
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    padding: 8px; /* Reducimos el padding */
+  }
+
+  .design-one .modal-edit-perfil .btn-save-changes {
+    width: 150px; /* Reducimos el ancho */
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    padding: 8px 16px; /* Reducimos el padding */
+  }
+
+  .design-one .mi-cuenta-container .review-section {
+    padding: 20px; /* Reducimos el padding */
+  }
+
+  .design-one .mi-cuenta-container .review-card {
+    max-height: 250px; /* Reducimos la altura máxima */
+  }
+
+  .design-one .mi-cuenta-container .review-card img {
+    width: 50px; /* Reducimos el tamaño de la imagen */
+    height: 50px;
+  }
+
+  .design-one .mi-cuenta-container .rating {
+    font-size: 1rem; /* Reducimos el tamaño de la calificación */
+  }
+
+  .design-one .mi-cuenta-container .review-card p {
+    font-size: 0.85rem; /* Reducimos el tamaño del texto */
+  }
+
+  .design-one .recommendations-section {
+    padding: 20px; /* Reducimos el padding */
+  }
+
+  .design-one .recommendations-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    ); /* Ajustamos la cuadrícula */
+  }
+
+  .design-one .recommendation-image {
+    height: 120px; /* Reducimos la altura de la imagen */
+  }
+
+  .design-one .recommendation-name {
+    font-size: 1rem; /* Reducimos el tamaño del nombre */
+  }
+
+  .design-one .recommendation-price {
+    font-size: 0.9rem; /* Reducimos el tamaño del precio */
+  }
+
+  .design-one .recommendation-points {
+    font-size: 0.85rem; /* Reducimos el tamaño de los puntos */
+  }
+
+  .design-one .view-details-button {
+    font-size: 0.85rem; /* Reducimos el tamaño de fuente */
+    padding: 6px 12px; /* Reducimos el padding */
+  }
+
+  .design-one .pagination-controls .btn {
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    padding: 6px 12px; /* Reducimos el padding */
+  }
+
+  .design-one .pagination-info {
+    font-size: 0.9rem; /* Reducimos el tamaño del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .design-one .mi-cuenta-container {
+    padding: 0;
+    border-radius: 15px;
+    min-height: 70vh;
+    max-width: 90% !important;
+  }
+
+  .design-one .mi-cuenta-container .left {
+    padding: 15px;
+    margin: auto;
+    width: 90%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .design-one .mi-cuenta-container .right {
+    padding: 15px;
+  }
+
+  .design-one .mi-cuenta-container .left img {
+    width: 80px; /* Reducimos aún más el tamaño del avatar */
+    height: 80px;
+  }
+
+  .design-one .mi-cuenta-container .left h5 {
+    font-size: 1rem; /* Reducimos aún más el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .left .text-muted {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño del texto */
+  }
+
+  .design-one .mi-cuenta-container .btn-close-session {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 6px 12px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .mi-cuenta-container .right h2 {
+    font-size: 1.2rem; /* Reducimos aún más el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .card-title {
+    font-size: 0.9rem; /* Reducimos aún más el tamaño del título */
+  }
+
+  .design-one .mi-cuenta-container .card-text {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño del texto */
+  }
+
+  .design-one .mi-cuenta-container .list-group-item {
+    font-size: 0.8rem; /* Reducimos aún más el tamaño del texto */
+  }
+
+  .design-one .btn-edit-perfil {
+    width: 100px; /* Reducimos aún más el ancho */
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 6px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .modal-edit-perfil {
+    padding: 15px; /* Reducimos aún más el padding */
+    max-width: 95%; /* Ajustamos el ancho */
+  }
+
+  .design-one .modal-edit-perfil h3 {
+    font-size: 1.2rem; /* Reducimos aún más el tamaño del título */
+  }
+
+  .design-one .modal-edit-perfil .form-group label {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de la etiqueta */
+  }
+
+  .design-one .modal-edit-perfil .form-control {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 6px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .modal-edit-perfil .btn-save-changes {
+    width: 120px; /* Reducimos aún más el ancho */
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 6px 12px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .mi-cuenta-container .review-section {
+    padding: 15px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .mi-cuenta-container .review-card {
+    max-height: 200px; /* Reducimos aún más la altura máxima */
+  }
+
+  .design-one .mi-cuenta-container .review-card img {
+    width: 40px; /* Reducimos aún más el tamaño de la imagen */
+    height: 40px;
+  }
+
+  .design-one .mi-cuenta-container .rating {
+    font-size: 0.9rem; /* Reducimos aún más el tamaño de la calificación */
+  }
+
+  .design-one .mi-cuenta-container .review-card p {
+    font-size: 0.8rem; /* Reducimos aún más el tamaño del texto */
+  }
+
+  .design-one .recommendations-section {
+    padding: 15px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .recommendations-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    ); /* Ajustamos aún más la cuadrícula */
+  }
+
+  .design-one .recommendation-image {
+    height: 100px; /* Reducimos aún más la altura de la imagen */
+  }
+
+  .design-one .recommendation-name {
+    font-size: 0.9rem; /* Reducimos aún más el tamaño del nombre */
+  }
+
+  .design-one .recommendation-price {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño del precio */
+  }
+
+  .design-one .recommendation-points {
+    font-size: 0.8rem; /* Reducimos aún más el tamaño de los puntos */
+  }
+
+  .design-one .view-details-button {
+    font-size: 0.8rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 5px 10px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .pagination-controls .btn {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño de fuente */
+    padding: 5px 10px; /* Reducimos aún más el padding */
+  }
+
+  .design-one .pagination-info {
+    font-size: 0.85rem; /* Reducimos aún más el tamaño del texto */
+  }
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Irish+Grover&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Irish+Grover&display=swap");
+
+:root {
+  --primario1: #485295;
+  --primario2: #7cbcfc;
+  --secundario1: #50c878;
+  --secundario2: #2e8b57;
+  --terciario: #333333;
+  --cuarto: #85ee8562;
+  --fondo1: #f5f1f1;
+  --fondo2: #f5f5f5;
+  --fondo3: #e6e1e1;
+  --fondo4: #a2a2a3;
+  --fondo5: #919292;
+  --colorFuentePrimaria: #ffffff;
+  --colorFuenteSecundaria: #d3cdcd;
+  --colorFuenteTerciaria: #333232;
+  --fuentePrimaria: "Jua";
+  --fuenteSecundaria: "Gugi";
+  --fuenteTerciaria: "Oxygen";
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuentePrimaria), cursive, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#ebe9e9, var(--fondo3));
+  height: 100%;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+/* Estilo para la pantalla de carga */
+.loading-screen {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.568);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  filter: none !important;
+}
+
+/* Animación del spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo para difuminar el Navbar, Footer, etc. mientras carga */
+.home-layout {
+  position: relative;
+  filter: blur(
+    10px
+  ) !important; /* Aplicamos el difuminado directamente al contenedor */
+  pointer-events: none; /* Desactiva la interacción */
+  user-select: none; /* Evita selección de texto */
+}

@@ -1,0 +1,342 @@
+/* Sidebar principal */
+.design-two .sidebar {
+  position: fixed;
+  top: 0;
+  left: -320px; /* Oculta por defecto en el lado izquierdo */
+  width: 320px;
+  height: 100%;
+  background: #fff; /* Fondo blanco limpio */
+  border-right: 1px solid #e0e0e0; /* Borde gris claro */
+  padding: 20px;
+  z-index: 1000;
+  transition: left 0.3s ease-out, box-shadow 0.3s ease;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave por defecto */
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+}
+
+.design-two .sidebar.open {
+  left: 0;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al abrir */
+}
+
+/* Encabezado del sidebar */
+.design-two .sidebar-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Línea gris claro */
+}
+
+.design-two .sidebar-header h2 {
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+  font-size: 1.4rem;
+  color: #333; /* Gris oscuro */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.design-two .sidebar-header h2:hover {
+  color: #666; /* Gris medio al pasar el cursor */
+}
+
+/* Contenido del sidebar */
+.design-two .sidebar-content {
+  height: calc(100% - 100px); /* Espacio para el encabezado y padding */
+  overflow-y: auto; /* Barra de desplazamiento vertical */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Barra de desplazamiento personalizada */
+.design-two .sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.design-two .sidebar-content::-webkit-scrollbar-thumb {
+  background: #ccc; /* Gris claro */
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.design-two .sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Gris más oscuro al pasar el cursor */
+}
+
+.design-two .sidebar-content::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Fondo gris muy claro */
+}
+
+/* Botón de cerrar */
+.design-two .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-two .close-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra al pasar el cursor */
+}
+
+.design-two .close-icon {
+  font-size: 1.5rem;
+  color: #666; /* Gris medio */
+  transition: color 0.3s ease;
+}
+
+.design-two .close-btn:hover .close-icon {
+  color: #333; /* Gris oscuro al pasar el cursor */
+}
+
+/* Botón de restablecer */
+.design-two .reset-btn {
+  width: 100% !important;
+  padding: 10px;
+  background: var(--primario1) !important;
+  color: var(--colorFuentePrimaria) !important;
+  border: none;
+  border-radius: 25px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.95rem;
+  font-weight: 500;
+  justify-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.37); 
+}
+
+.design-two .reset-btn:hover {
+  background: var(--fondo3); /* Gris un poco más oscuro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Sección de filtros */
+.design-two .filter-section {
+  padding: 15px;
+  background: #fff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-two .filter-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el cursor */
+}
+
+/* Título de filtro */
+.design-two .filter-title {
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333; /* Gris oscuro */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.design-two .filter-section:hover .filter-title {
+  color: #666; /* Gris medio al pasar el cursor */
+}
+
+/* Grupo de filtros */
+.design-two .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.design-two .filter-group li {
+  background: var(--fondo2); /* Gris claro */
+  color: var(--terciario); /* Gris oscuro */
+  padding: 10px 15px;
+  width: 80%;
+  border-radius: 25px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.342); 
+}
+
+.design-two .filter-group li:hover {
+  background: var(--fondo5); 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.644); /* Sombra más pronunciada */
+}
+
+/* Estilos para enlaces dentro de li */
+.design-two .filter-group li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .design-two .sidebar {
+    width: 280px;
+    left: -280px;
+    padding: 15px;
+    box-shadow: 5px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .sidebar.open {
+    left: 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .design-two .close-icon {
+    font-size: 1.3rem;
+  }
+
+  .design-two .sidebar-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .design-two .reset-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .reset-btn:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .filter-section {
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .filter-section:hover {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .filter-title {
+    font-size: 1rem;
+  }
+
+  .design-two .filter-group li {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .filter-group li:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .design-two .sidebar {
+    width: 240px;
+    left: -240px;
+    padding: 10px;
+    box-shadow: 5px 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .sidebar.open {
+    left: 0;
+    box-shadow: 5px 0 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .close-btn {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .design-two .close-icon {
+    font-size: 1.2rem;
+  }
+
+  .design-two .sidebar-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .design-two .reset-btn {
+    padding: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .reset-btn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .filter-section {
+    padding: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .filter-section:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .filter-title {
+    font-size: 0.9rem;
+  }
+
+  .design-two .filter-group li {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .filter-group li:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .design-two .sidebar {
+    width: 300px;
+    left: -300px;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .design-two .sidebar.open {
+    box-shadow: 5px 0 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .design-two .sidebar-content {
+    gap: 15px;
+  }
+}

@@ -1,0 +1,525 @@
+/* Contenedor principal */
+.design-two .auth-container {
+  min-height: 80vh; /* Ocupa toda la altura de la pantalla */
+  background: linear-gradient(
+    120deg,
+    var(--fondo1) 50%,
+    var(--fondo2) 100%
+  ); /* Gradiente sutil */
+  padding: 120px 20px; /* Más espacio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Jua" como fuente primaria */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Para elementos decorativos */
+}
+
+/* Elemento decorativo de fondo */
+.design-two .auth-container::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: var(--cuarto); /* #85ee8562 - Verde claro translúcido */
+  border-radius: 50%;
+  top: -80px;
+  right: -80px;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Tarjeta de autenticación */
+.design-two .auth-card {
+  width: 100%;
+  max-width: 900px; /* Más ancha para layout de dos columnas */
+  background: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.295), 0 6px 20px rgba(0, 0, 0, 0.295);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Formulario de autenticación (dos columnas) */
+.design-two .auth-form {
+  display: flex;
+  flex-direction: row;
+  min-height: 500px;
+}
+
+.design-two .left-side {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.design-two .left-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.design-two .overlay-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(72, 82, 149, 0.4),
+    rgba(80, 200, 120, 0.4)
+  ); /* Gradiente sobre imagen */
+  z-index: 1;
+}
+
+/* Lado derecho (formulario) */
+.design-two .right-side {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+/* Título */
+.design-two .auth-title {
+  font-size: 2rem;
+  color: var(--primario1); /* #485295 - Azul oscuro */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.design-two .auth-title:hover {
+  transform: scale(1.03);
+}
+
+/* Grupo de entrada */
+.design-two .input-group {
+  margin-bottom: 20px;
+}
+
+.design-two .input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--fondo4); /* #e6e1e1 - Borde claro */
+  border-radius: 6px;
+  font-family: var(--fuenteSecundaria), sans-serif !important; /* "Gugi" */
+  font-size: 1rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  background: var(--fondo2); /* #f5f5f5 - Fondo gris claro */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.design-two .input-group input:focus {
+  outline: none;
+  border-color: var(--primario2); /* #7cbcfc - Azul claro */
+  box-shadow: 0 0 0 3px rgba(124, 188, 252, 0.3);
+  transform: scale(1.02);
+}
+
+/* Enlace de recuperación */
+.design-two .recovery-link {
+  font-size: 0.9rem;
+  color: var(--secundario1); /* #50c878 - Verde claro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: right;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.design-two .recovery-link:hover {
+  color: var(--secundario2); /* #2e8b57 - Verde oscuro */
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.design-two .checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.design-two .checkbox-group input {
+  margin-right: 10px;
+  accent-color: var(--primario1); /* #485295 - Azul oscuro */
+}
+
+.design-two .checkbox-group label {
+  font-size: 0.9rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+}
+
+.design-two .checkbox-group a {
+  color: var(--primario2); /* #7cbcfc - Azul claro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.design-two .checkbox-group a:hover {
+  color: var(--primario1); /* #485295 - Azul oscuro */
+  text-decoration: underline;
+}
+
+/* Botón de autenticación */
+.design-two .auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(
+    to right,
+    var(--primario1),
+    var(--primario2)
+  ); /* Gradiente azul */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .auth-btn:hover {
+  background: linear-gradient(
+    to right,
+    var(--primario2),
+    var(--primario1)
+  ); /* Gradiente invertido */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensaje de error */
+.design-two .auth-container .error-message {
+  font-size: 0.9rem;
+  color: red;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: center;
+  margin-top: 15px;
+  padding: 8px;
+  background: rgba(46, 139, 87, 0.1); /* Fondo sutil verde */
+  border-radius: 6px;
+}
+
+/* Divisor */
+.design-two .divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.design-two .divider span {
+  font-size: 0.9rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  padding: 0 15px;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.design-two .divider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--fondo3); /* #e6e1e1 - Línea clara */
+}
+
+/* Botón de Google */
+.design-two .google-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--fondo4); /* #e6e1e1 - Borde claro */
+  border-radius: 8px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 1rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.design-two .google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.design-two .google-btn:hover {
+  background: var(--fondo2); /* #f5f5f5 - Gris claro */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlace para cambiar modo */
+.design-two .toggle-link {
+  font-size: 0.9rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.design-two .toggle-link button {
+  background: none;
+  border: none;
+  color: var(--primario2); /* #7cbcfc - Azul claro */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.design-two .toggle-link button:hover {
+  color: var(--primario1); /* #485295 - Azul oscuro */
+  text-decoration: underline;
+}
+
+/* Modal */
+.design-two .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Más oscuro para contraste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.design-two .modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid var(--primario2); /* #7cbcfc - Borde azul claro */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+.design-two .modal-content h3 {
+  font-size: 1.6rem;
+  color: var(--primario1); /* #485295 - Azul oscuro */
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.design-two .modal-content p {
+  font-size: 1rem;
+  color: var(--fondo4);
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.design-two .modal-content .input-group {
+  margin-bottom: 15px;
+}
+
+.design-two .modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(
+    to right,
+    var(--secundario1),
+    var(--secundario2)
+  ); /* Gradiente verde */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .modal-content button:hover {
+  background: linear-gradient(
+    to right,
+    var(--secundario2),
+    var(--secundario1)
+  ); /* Gradiente invertido */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.design-two .modal-close {
+  background: var(--secundario2); /* #2e8b57 - Verde oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.design-two .modal-close:hover {
+  background: var(--secundario1); /* #50c878 - Verde claro */
+  transform: scale(1.1) rotate(90deg);
+}
+
+.design-two .modal-error {
+  font-size: 0.9rem;
+  color: var(--secundario2); /* #2e8b57 - Verde oscuro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: center;
+  margin-top: 15px;
+  padding: 8px;
+  background: rgba(46, 139, 87, 0.1); /* Fondo sutil verde */
+  border-radius: 6px;
+}
+
+/* Animación de entrada del modal */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .design-two .auth-container {
+    padding: 80px 40px;
+  }
+  .design-two .auth-card {
+    width: 80%;
+  }
+
+  .design-two .auth-form {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .design-two .left-side {
+    max-height: 200px !important;
+  }
+
+  .design-two .right-side {
+    padding: 40px;
+  }
+
+  .design-two .auth-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .design-two .input-group input {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .design-two .auth-btn,
+  .design-two .google-btn {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .design-two .modal-content {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .design-two .modal-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-two .auth-container {
+    padding: 80px 30px;
+  }
+
+  .design-two .auth-title {
+    font-size: 1.6rem;
+    padding: 6px 15px;
+  }
+
+  .design-two .right-side {
+    padding: 40px;
+  }
+
+  .design-two .left-side {
+    max-height: 100px !important;
+  }
+
+  .design-two .input-group input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .design-two .auth-btn,
+  .design-two .google-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .design-two .recovery-link,
+  .design-two .checkbox-group label,
+  .design-two .toggle-link {
+    font-size: 0.85rem;
+  }
+
+  .design-two .modal-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .design-two .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .design-two .modal-content button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .design-two .auth-container {
+    padding: 80px 10px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .design-two .auth-card {
+    max-width: 700px;
+  }
+}

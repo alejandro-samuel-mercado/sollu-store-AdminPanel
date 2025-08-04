@@ -1,0 +1,329 @@
+/* Sidebar principal */
+.design-one .sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f4f8, var(--primario2));
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  z-index: 1000;
+  transition: right 0.3s ease-out, box-shadow 0.3s ease;
+  border-radius: 0 0 0 25px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.design-one .sidebar.open {
+  right: 0;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado del sidebar */
+.design-one .sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.design-one .sidebar-header h2 {
+  font-family: var(--fuentePrimaria);
+  font-size: 1.4rem;
+  color: var(--teciario);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+/* Contenido del sidebar */
+.design-one .sidebar-content {
+  height: calc(100% - 100px);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding-right: 10px;
+}
+
+.design-one .sidebar.open .sidebar-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón de cerrar */
+.design-one .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1001;
+}
+
+.design-one .close-btn:hover {
+  transform: rotate(180deg) scale(1.15);
+  background: #ff8787;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.design-one .close-icon {
+  font-size: 22px;
+  color: #fff;
+}
+
+/* Botón de restablecer */
+.design-one .reset-btn {
+  width: 100%;
+  background: var(--primario2) !important;
+  color: var(--colorFuente1);
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.design-one .reset-btn:hover {
+  transform: translateY(-3px);
+  background: var(--teciario);
+  box-shadow: 0 6px 20px rgba(72, 202, 228, 0.4);
+}
+
+/* Sección de filtros */
+.design-one .filter-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--fondo1);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.design-one .filter-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Título de filtro */
+.design-one .filter-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teciario);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.design-one .filter-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: #00b4d8;
+  transition: left 0.5s ease;
+}
+
+.design-one .filter-section:hover .filter-title::after {
+  left: 0;
+}
+
+.design-one .filter-section:hover .filter-title {
+  color: #023047;
+}
+
+/* Grupo de filtros */
+.design-one .filter-group {
+    font-family: var(--fuenteSecundaria);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.design-one .filter-group li {
+  background: #caf0f8;
+  color: #023047;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease,
+    box-shadow 0.4s ease;
+  animation: bounceIn 0.6s ease-out backwards;
+  animation-delay: calc(var(--order) * 0.1s);
+}
+
+.design-one .filter-group li:hover {
+  transform: scale(1.12) rotate(3deg);
+  background: #90e0ef;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para enlaces dentro de li */
+.design-one .filter-group li a {
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+.design-one .filter-group li:hover a {
+  color: #fff;
+}
+
+/* Scrollbar personalizado */
+.design-one .sidebar-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.design-one .sidebar-content::-webkit-scrollbar-thumb {
+  background: #90e0ef;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.design-one .sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #48cae4;
+}
+
+.design-one .sidebar-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+ .design-one  .sidebar {
+    width: 280px;
+    right: -280px;
+    padding: 20px;
+  }
+
+ .design-one  .sidebar.open {
+    right: 0;
+  }
+
+ .design-one  .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+
+ .design-one  .close-icon {
+    font-size: 18px;
+  }
+
+ .design-one  .sidebar-header h2 {
+    font-size: 1.5rem;
+  }
+
+ .design-one  .reset-btn {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+ .design-one  .filter-section {
+    padding: 15px;
+  }
+
+ .design-one  .filter-title {
+    font-size: 1rem;
+  }
+
+ .design-one  .filter-group li {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+.design-one    .sidebar {
+    width: 240px;
+    right: -240px;
+    padding: 15px;
+  }
+
+ .design-one   .sidebar.open {
+    right: 0;
+  }
+
+.design-one    .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+ .design-one   .close-icon {
+    font-size: 16px;
+  }
+
+  .design-one  .sidebar-header h2 {
+    font-size: 1.3rem;
+  }
+
+ .design-one   .reset-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+ .design-one   .filter-section {
+    padding: 10px;
+  }
+
+ .design-one   .filter-title {
+    font-size: 0.9rem;
+  }
+
+ .design-one   .filter-group li {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

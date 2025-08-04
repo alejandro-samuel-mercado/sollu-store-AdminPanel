@@ -1,0 +1,232 @@
+/* Estilo base de la navbar */
+.design-one  .navbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--primario1);
+  font-family: var(--fuentePrimaria) !important;
+  font-size: 1.2rem;
+  margin: 2% 6% 0 6%;
+  padding: 0 5px;
+  border-radius: 15px;
+  border: 4px solid #00b894;
+  color: var(--colorFuentePrimaria);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100% - 12%); /* Ajuste para márgenes laterales */
+  transition: transform 0.3s ease-in-out, padding 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+/* Contenedor principal de los ítems */
+.design-one  .navbar-content {
+  width: auto;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px; 
+}
+
+.design-one  .invisible {
+  display: none;
+}
+.design-one  .navbar-brand img {
+  width: 130px;
+}
+
+.design-one  .nav-link {
+  font-family:var(--fuentePrimaria) !important;
+  color:  var(--colorFuentePrimaria);
+  text-decoration: none;
+  margin-left: 40px;
+  transition: color 0.3s ease;
+}
+
+.design-one  .nav-link:hover {
+  color: #ff7675;
+}
+.design-one  .nav-link:focus,
+.design-one  .nav-link:active {
+  background-color: transparent !important;
+  color: inherit !important;
+  outline: none;
+}
+
+.design-one  .navbar-toggler-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.design-one  .navbar-brand {
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+.design-one  .navbar-toggler-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Efecto de flotación al hacer scroll */
+.design-one  .floating {
+  background-color: rgba(92, 154, 170, 0.603);
+}
+
+
+/* Ocultar la barra al hacer scroll hacia abajo */
+.design-one  .hidden {
+  transform: translateY(-50%);
+}
+
+.design-one  .nav-link:hover {
+  color: #ff7675;
+}
+
+.design-one  .nav-link:focus,
+.design-one  .nav-link:active {
+  background-color: transparent !important;
+  color: inherit !important;
+  outline: none;
+}
+
+/* Iconos de Bootstrap */
+.design-one  .bi {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+/* Dropdown para Categorías */
+.design-one  .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.design-one  .dropdown-menu {
+  background-color: var(--fondo1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.445);
+}
+
+.design-one  .dropdown-item {
+  color: var(--primario1);
+  font-weight: 500;
+}
+
+.design-one  .dropdown-item:hover {
+  color: var(--secundario1);
+  background-color: var(--fondo2);
+}
+.design-one  .menu-btn {
+  display: flex;
+align-items: center;
+  color:  var(--colorFuentePrimaria);
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+    background-color:transparent;
+  font-family: var(--fuenteSecundaria), cursive;
+  border: none;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.design-one  .menu-btn p{
+  margin: auto;
+  margin-left: 5px;
+}
+
+
+.design-one  .menu-btn:hover {
+  color: var(--secundario2);
+}
+
+
+/* Responsividad */
+@media (max-width: 1000px) {
+ .design-one  .navbar-left .nav-item:not(.dropdown) {
+    display: none; 
+  }
+
+ .design-one  .menu-content .nav-item:not(.dropdown) {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+ .design-one  .navbar {
+    margin: 0; 
+    width: 100%; 
+    border-radius: 0; 
+    padding: 8px 10px;
+  }
+
+ .design-one  .navbar-brand img {
+    width: 100px; /* Reducir tamaño del logo */
+  }
+
+ .design-one  .navbar-left .dropdown {
+    display: none; /* Ocultar "Categorías" en móviles */
+  }
+
+ .design-one  .menu-content .dropdown {
+    display: block;
+  }
+
+  .design-one .nav-link {
+    font-size: 1rem;
+      margin-left: 20px;
+  }
+ .design-one  .menu-btn {
+  font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+ .design-one   .navbar {
+    width: 99.8% !important;
+  }
+ .design-one  .navbar-content {
+    padding :0;
+    margin: 0;
+    transform: translateX(60px);
+    justify-content: flex-start;
+    width: auto !important;
+  gap: 0; 
+}
+
+ .design-one .nav-link {
+    font-size: 1rem;
+  }
+ .design-one  .menu-btn {
+      margin-right: -30px !important;
+      padding: 0;
+  font-size: 1.2rem;
+}
+.design-one  .menu-btn p{
+ display: none;
+}
+.design-one .navbar-brand {
+  margin-right: -10px;
+}
+
+ .design-one  .navbar-brand img {
+    width: 100px;
+    margin: 0;
+  }
+
+}
+
+
+
+@media (max-width: 400px) {
+  .design-one .navbar-content {
+    transform: translateX(20px);
+    justify-content: center;
+  }
+  .design-one  .menu-btn {
+      margin:8px
+  }
+  .design-one .nav-link {
+margin: 5px; }
+}

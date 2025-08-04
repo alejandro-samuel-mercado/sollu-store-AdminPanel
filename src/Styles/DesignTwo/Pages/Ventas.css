@@ -1,0 +1,556 @@
+/* Contenedor principal de VerVentas */
+.design-two .ver-ventas-container {
+  padding: 120px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fuentePrimaria), sans-serif; /* Usamos Jua */
+}
+
+/* Sección del título */
+.design-two .hero-section {
+  display: none;
+}
+
+/* Sección de filtros */
+.design-two .filters-section {
+  margin-top: -30px;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Contenedores de búsqueda, ordenamiento, filtro y fecha */
+.design-two .search-container,
+.design-two .sort-container,
+.design-two .filter-container,
+.design-two .date-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Iconos */
+.design-two .search-icon,
+.design-two .sort-icon,
+.design-two .filter-icon,
+.design-two .calendar-icon {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Campos de entrada y selectores */
+.design-two .search-input,
+.design-two .search-select,
+.design-two .sort-select,
+.design-two .filter-select,
+.design-two .date-field-select,
+.design-two .date-picker {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 25px;
+  background: var(--fondo2); /* Fondo gris claro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  font-size: 0.85rem;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.design-two .search-input:focus,
+.design-two .search-select:focus,
+.design-two .sort-select:focus,
+.design-two .filter-select:focus,
+.design-two .date-field-select:focus,
+.design-two .date-picker:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 82, 149, 0.2); /* Sombra con primario1 */
+}
+
+/* Selectores con ícono */
+.design-two .search-select,
+.design-two .sort-select,
+.design-two .filter-select,
+.design-two .date-field-select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px;
+}
+
+/* Botón de filtro por fecha */
+.design-two .date-filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px;
+  background: var(--fondo2); /* Fondo gris claro */
+  color: #333;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.design-two .date-filter-button:hover {
+  background: var(--fondo3); /* Fondo gris un poco más oscuro */
+  transform: translateY(-1px);
+}
+
+/* Contenedor del DatePicker */
+.design-two .date-picker-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Botón de limpiar fecha */
+.design-two .clear-date-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 25px;
+  background: #dc3545;
+  color: #fff;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.design-two .clear-date-button:hover {
+  background: #b02a37;
+  transform: translateY(-1px);
+}
+
+/* Lista de tarjetas */
+.design-two .ventas-list {
+  flex: 1;
+  overflow-y: auto; /* Desplazamiento vertical */
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* 3 o 4 tarjetas por fila */
+  gap: 15px;
+}
+
+/* Ajuste para pocas tarjetas */
+.design-two .ventas-list.few-cards {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Contenedor de la tarjeta (VentaCard) */
+.design-two .venta-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.411);
+  padding: 15px;
+  font-family: var(--fuentePrimaria), sans-serif; /* Usamos Jua */
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para diferentes estados */
+.design-two .venta-card.vendido-local {
+  border-left: 3px solid var(--secundario1); /* Verde suave */
+}
+
+.design-two .venta-card.vendido-domicilio {
+  border-left: 3px solid var(--primario1); /* Azul oscuro */
+}
+
+.design-two .venta-card.cancelada {
+  border-left: 3px solid #dc3545; /* Rojo */
+  background: #f8d7da; /* Fondo rojo claro */
+}
+
+/* Encabezado de la tarjeta */
+.design-two .venta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.design-two .venta-header h3 {
+  font-size: 1.1rem;
+  color: #000; /* Negro */
+  font-weight: 600;
+  font-family: var(--fuentePrimaria), sans-serif; /* Usamos Jua */
+  margin: 0;
+}
+
+/* Selector de estado */
+.design-two .estado-select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 20px;
+  background: var(--fondo2); /* Fondo gris claro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  font-size: 0.8rem;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 8px;
+}
+
+.design-two .estado-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 82, 149, 0.2); /* Sombra con primario1 */
+}
+
+/* Detalles principales */
+.design-two .venta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.design-two .main-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.design-two .main-details p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+}
+
+.design-two .main-details p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Botón "Ver más/Ver menos" */
+.design-two .toggle-details {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.design-two .toggle-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  background: var(--fondo2); /* Fondo gris claro */
+  color: #333;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.design-two .toggle-button:hover {
+  background: var(--fondo3); /* Fondo gris un poco más oscuro */
+  transform: translateY(-1px);
+}
+
+/* Detalles secundarios (desplegables) */
+.design-two .secondary-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  max-height: 150px; /* Limita la altura del contenido desplegable */
+  overflow-y: auto; /* Desplazamiento vertical si el contenido es largo */
+}
+
+.design-two .secondary-details p {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  color: #333;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+}
+
+.design-two .secondary-details p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.design-two .secondary-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.design-two .secondary-details ul li {
+  font-size: 0.8rem;
+  color: #333;
+  font-family: var(--fuenteSecundaria), sans-serif; /* Usamos Gugi */
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Animación de expansión */
+.design-two .venta-card.expanded {
+  transform: scale(1.01);
+}
+
+/* Spinner de carga */
+.design-two .loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.design-two .loading-spinner .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.3em;
+  color: var(--primario1);
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pagination-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+/* Responsividad */
+@media (max-width: 1024px) {
+  .design-two .ventas-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 2 o 3 tarjetas por fila */
+  }
+
+  .design-two .filters-section {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .design-two .search-container,
+  .design-two .sort-container,
+  .design-two .filter-container,
+  .design-two .date-filter-container {
+    min-width: 150px;
+  }
+
+  .design-two .search-input,
+  .design-two .search-select,
+  .design-two .sort-select,
+  .design-two .filter-select,
+  .design-two .date-field-select,
+  .design-two .date-picker {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .design-two .date-filter-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .design-two .clear-date-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .design-two .venta-card {
+    padding: 10px;
+  }
+
+  .design-two .venta-header h3 {
+    font-size: 1rem;
+  }
+
+  .design-two .estado-select {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .design-two .main-details p,
+  .design-two .secondary-details p {
+    font-size: 0.8rem;
+  }
+
+  .design-two .secondary-details ul li {
+    font-size: 0.75rem;
+  }
+
+  .design-two .toggle-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .design-two .secondary-details {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .design-two .ventas-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 1 o 2 tarjetas por fila */
+  }
+
+  .design-two .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .design-two .search-container,
+  .design-two .sort-container,
+  .design-two .filter-container,
+  .design-two .date-filter-container {
+    min-width: 100%;
+  }
+
+  .design-two .search-input,
+  .design-two .search-select,
+  .design-two .sort-select,
+  .design-two .filter-select,
+  .design-two .date-field-select,
+  .design-two .date-picker {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .design-two .date-filter-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .design-two .clear-date-button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .design-two .venta-card {
+    padding: 8px;
+  }
+
+  .design-two .venta-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .design-two .estado-select {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  .design-two .main-details {
+    grid-template-columns: 1fr;
+  }
+
+  .design-two .main-details p,
+  .design-two .secondary-details p {
+    font-size: 0.75rem;
+  }
+
+  .design-two .secondary-details ul li {
+    font-size: 0.7rem;
+  }
+
+  .design-two .toggle-button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .design-two .secondary-details {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-two .ver-ventas-container {
+    padding: 10px;
+  }
+
+  .design-two .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .design-two .ventas-list {
+    grid-template-columns: 1fr; /* 1 tarjeta por fila */
+  }
+
+  .design-two .filters-section {
+    padding: 8px 10px;
+  }
+
+  .design-two .search-container,
+  .design-two .sort-container,
+  .design-two .filter-container,
+  .design-two .date-filter-container {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .design-two .search-input,
+  .design-two .search-select,
+  .design-two .sort-select,
+  .design-two .filter-select,
+  .design-two .date-field-select,
+  .design-two .date-picker {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  .design-two .date-filter-button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .design-two .clear-date-button {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+  }
+}

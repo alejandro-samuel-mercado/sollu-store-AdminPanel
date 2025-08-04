@@ -1,0 +1,264 @@
+/* DetalleVenta.css */
+.design-one .detalles-ventas-container {
+  margin-top: 20px;
+  padding: 100px 30px;
+  background: linear-gradient(135deg, var(--fondo1), var(--fondo2));
+  font-family: var(--fuentePrimaria);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botón Volver */
+.design-one .toggle-button-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  max-width: 200px;
+  border-radius: 8px;
+  background-color: var(--secundario2);
+  color: var(--colorFuentePrimaria);
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.design-one .toggle-button-back:hover {
+  background-color: var(--secundario1);
+  transform: translateY(-2px);
+}
+
+/* Tarjeta de Venta */
+.design-one .detalles-ventas-container .venta-card {
+  background: var(--fondo3);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.247);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 900px; /* Aumentado para un diseño más amplio y profesional */
+  margin: 20px auto;
+}
+
+.design-one .detalles-ventas-container .venta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(29, 44, 42, 0.418);
+}
+
+.design-one .detalles-ventas-container .venta-card.vendido-local,
+.design-one .detalles-ventas-container .venta-card.vendido-domicilio {
+  border-left: 6px solid #50c878;
+}
+
+.design-one .detalles-ventas-container .venta-card.cancelada {
+  border-left: 6px solid #ff4d4d;
+}
+
+/* Encabezado */
+.design-one .detalles-ventas-container .venta-header h3 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--terciario);
+  margin: 0 auto 20px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Contenedor Principal */
+.design-one .detalles-ventas-container .venta-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Detalles */
+.design-one .detalles-ventas-container .venta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: var(--fuenteSecundaria);
+}
+
+.design-one .detalles-ventas-container .main-details {
+  background: var(--fondo2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.design-one .detalles-ventas-container .main-details h4 {
+  color: var(--primario1);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primario1);
+  padding-bottom: 5px;
+}
+
+.design-one .detalles-ventas-container .main-details p {
+  margin: 12px 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--terciario);
+  line-height: 1.5;
+}
+
+.design-one .detalles-ventas-container .main-details p strong {
+  color: var(--primario1);
+  font-weight: 500;
+}
+
+/* Select de Estado */
+.design-one .estado-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--fondo4);
+  background: var(--fondo3);
+  font-size: 1rem;
+  color: var(--terciario);
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+.design-one .estado-select:focus {
+  border-color: var(--primario1);
+  outline: none;
+}
+
+/* Tabla */
+.design-one .table-responsive {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.design-one .detalles-ventas-container .table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.design-one .detalles-ventas-container .table th,
+.design-one .detalles-ventas-container .table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.design-one .detalles-ventas-container .table th {
+  background: var(--primario1);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.design-one .detalles-ventas-container .table td {
+  background: var(--fondo2);
+  color: var(--terciario);
+  border-bottom: 1px solid var(--fondo4);
+}
+
+.design-one .detalles-ventas-container .table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Botón PDF */
+.design-one .detalles-ventas-container .toggle-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--primario1);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.design-one .detalles-ventas-container .toggle-button:hover {
+  background-color: var(--primario2);
+  transform: translateY(-2px);
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .design-one .detalles-ventas-container .venta-main {
+    grid-template-columns: 1fr;
+  }
+
+  .design-one .detalles-ventas-container .venta-card {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .design-one .detalles-ventas-container {
+    padding: 80px 20px;
+  }
+
+  .design-one .detalles-ventas-container .venta-card {
+    padding: 25px;
+    max-width: 100%;
+  }
+
+  .design-one .detalles-ventas-container .venta-header h3 {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+
+  .design-one .detalles-ventas-container .main-details {
+    padding: 15px;
+  }
+
+  .design-one .detalles-ventas-container .main-details p {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+  }
+
+  .design-one .detalles-ventas-container .table th,
+  .design-one .detalles-ventas-container .table td {
+    padding: 10px;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+  }
+
+  .design-one .toggle-button-back {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-one .detalles-ventas-container {
+    padding: 60px 15px;
+  }
+
+  .design-one .detalles-ventas-container .venta-card {
+    padding: 20px;
+  }
+
+  .design-one .detalles-ventas-container .venta-header h3 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  .design-one .detalles-ventas-container .main-details h4 {
+    font-size: 1.1rem;
+  }
+
+  .design-one .detalles-ventas-container .main-details p {
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+  }
+
+  .design-one .detalles-ventas-container .toggle-button,
+  .design-one .toggle-button-back {
+    padding: 8px 15px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
+
+  .design-one .estado-select {
+    max-width: 100%;
+  }
+}

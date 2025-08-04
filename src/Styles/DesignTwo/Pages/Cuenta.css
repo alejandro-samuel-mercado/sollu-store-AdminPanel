@@ -1,0 +1,506 @@
+/* Contenedor principal */
+.design-two .mi-cuenta-container {
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: var(--fondo1); /* #f5f1f1 - Fondo gris muy claro */
+  padding: 120px 20px; /* Padding similar al dashboard */
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" como fuente primaria */
+}
+
+/* Sección izquierda (perfil de usuario) */
+.design-two .left {
+  background: var(--fondo2); /* #f5f5f5 - Fondo gris claro */
+  border-radius: 8px;
+  padding: 25px !important; /* Sobrescribe el padding original */
+  border: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.411);
+  text-align: center;
+}
+
+.design-two .left img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid var(--primario1);
+}
+
+.design-two .left h5 {
+  font-size: 1.1rem;
+  color: var(--terciario);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.design-two .left .text-muted {
+  font-size: 1rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+}
+
+.design-two .btn-close-session {
+  background: var(--secundario2); /* #2e8b57 - Verde oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.design-two .btn-close-session:hover {
+  background: var(--secundario1); /* #50c878 - Verde claro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección derecha (contenido principal) */
+.design-two .right {
+  padding: 25px !important; /* Sobrescribe el padding original */
+}
+
+/* Títulos de sección */
+.design-two .right h2 {
+  font-size: 1.8rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  font-weight: 600;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--fondo3); /* #e6e1e1 - Línea inferior clara */
+  padding-bottom: 10px;
+}
+
+/* Tarjeta de perfil */
+.design-two .card {
+  background: var(--fondo1);
+  border: 1px solid var(--fondo3);
+  border-radius: 8px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.411);
+  margin-bottom: 20px;
+}
+
+.design-two .card-body {
+  padding: 20px;
+}
+
+.design-two .card-title {
+  font-size: 1.1rem;
+  color: var(--terciario);
+  font-family: var(--fuenteSecundaria), sans-serif;
+  margin-bottom: 10px;
+}
+
+.design-two .card-text {
+  font-family: var(--fuenteSecundaria), sans-serif;
+}
+
+.design-two .btn-edit-perfil {
+  background: var(--primario1); /* #485295 - Azul oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin: 10px 20px;
+}
+
+.design-two .btn-edit-perfil:hover {
+  background: var(--primario2); /* #7cbcfc - Azul claro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista de detalles en historial de compras */
+.design-two .list-group-item {
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  padding: 10px 0;
+}
+
+.design-two .list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Controles de paginación */
+.design-two .pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.design-two .pagination-controls .btn {
+  background: var(--secundario2); /* #2e8b57 - Verde oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.design-two .pagination-controls .btn:hover {
+  background: var(--secundario1); /* #50c878 - Verde claro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .pagination-controls .btn:disabled {
+  background: var(--fondo5); /* #919292 - Gris apagado */
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.design-two .pagination-info {
+  font-size: 0.95rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+}
+
+/* Sección de reseñas */
+.design-two .review-section .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.design-two .review-card {
+  background: var(--fondo1);
+  border: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.design-two .review-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 1px solid var(--primario1); /* #485295 - Azul oscuro */
+}
+
+.design-two .review-card .rating {
+  color: var(--secundario1); /* #50c878 - Verde claro */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.design-two .review-card p {
+  font-size: 0.9rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+}
+
+/* Sección de recomendaciones */
+.design-two .recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.design-two .recommendation-card {
+  background: #fff;
+  border: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-two .recommendation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .recommendation-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.design-two .recommendation-name {
+  font-size: 1.1rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  font-family: var(--fuenteSecundaria), sans-serif;
+  margin-bottom: 5px;
+}
+
+.design-two .recommendation-price {
+  font-size: 1rem;
+  color: var(--primario1); /* #485295 - Azul oscuro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  margin-bottom: 5px;
+}
+
+.design-two .recommendation-points {
+  font-size: 0.9rem;
+  color: var(--secundario1); /* #50c878 - Verde claro */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  margin-bottom: 10px;
+}
+
+.design-two .view-details-button {
+  background: var(--primario1); /* #485295 - Azul oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.design-two .view-details-button:hover {
+  background: var(--primario2); /* #7cbcfc - Azul claro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .no-recommendations {
+  font-size: 1rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modal de edición de perfil */
+.design-two .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.design-two .modal-edit-perfil {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.design-two .modal-edit-perfil h3 {
+  font-size: 1.5rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.design-two .btn-closed-perfil {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--fondo4); /* #a2a2a3 - Gris intermedio */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.design-two .btn-closed-perfil:hover {
+  color: var(--terciario); /* #333333 - Gris oscuro */
+}
+
+.design-two .form-group {
+  margin-bottom: 15px;
+}
+
+.design-two .form-group label {
+  font-size: 0.95rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  font-family: var(--fuentePrimaria), sans-serif; /* "Jua" */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.design-two .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--fondo3); /* #e6e1e1 - Borde claro */
+  border-radius: 6px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.9rem;
+  color: var(--terciario); /* #333333 - Gris oscuro */
+  background: var(--fondo2); /* #f5f5f5 - Fondo gris claro */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-two .form-control:focus {
+  outline: none;
+  border-color: var(--primario2); /* #7cbcfc - Azul claro */
+  box-shadow: 0 0 0 3px rgba(124, 188, 252, 0.2); /* Sombra azul clara */
+}
+
+.design-two .btn-save-changes {
+  background: var(--primario1); /* #485295 - Azul oscuro */
+  color: var(--colorFuentePrimaria); /* #ffffff - Blanco */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-family: var(--fuenteSecundaria), sans-serif; /* "Gugi" */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.design-two .btn-save-changes:hover {
+  background: var(--primario2); /* #7cbcfc - Azul claro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .design-two .mi-cuenta-container {
+    padding: 20px 15px;
+  }
+
+  .design-two .left,
+  .design-two .right {
+    padding: 15px !important;
+  }
+
+  .design-two .left img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .design-two .left h5 {
+    font-size: 1.3rem;
+  }
+
+  .design-two .right h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .design-two .card-title {
+    font-size: 1rem;
+  }
+
+  .design-two .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-two .recommendation-image {
+    height: 120px;
+  }
+
+  .design-two .modal-edit-perfil {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .design-two .modal-edit-perfil h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-two .left img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .design-two .left h5 {
+    font-size: 1.2rem;
+  }
+
+  .design-two .left .text-muted {
+    font-size: 0.9rem;
+  }
+
+  .design-two .btn-close-session {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .design-two .right h2 {
+    font-size: 1.3rem;
+  }
+
+  .design-two .card-title {
+    font-size: 0.95rem;
+  }
+
+  .design-two .btn-edit-perfil {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .design-two .pagination-controls .btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .design-two .pagination-info {
+    font-size: 0.85rem;
+  }
+
+  .design-two .review-card {
+    padding: 10px;
+  }
+
+  .design-two .review-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .design-two .recommendation-name {
+    font-size: 1rem;
+  }
+
+  .design-two .recommendation-price,
+  .design-two .recommendation-points {
+    font-size: 0.85rem;
+  }
+
+  .design-two .view-details-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .design-two .form-control {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .design-two .btn-save-changes {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .design-two .recommendations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
