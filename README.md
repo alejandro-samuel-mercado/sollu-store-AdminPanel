@@ -1,57 +1,70 @@
 # Sollu Store Admin Panel
-Admin Panel for Sollu Store - E-commerce Management Dashboard
 
-Este panel de administración está diseñado para gestionar todos los aspectos de una tienda en línea, incluyendo productos, usuarios, cupones, categorías, ajustes del sitio, descuentos, ventas y más. Desarrollado con React, CSS y otras tecnologías modernas, ofrece una interfaz intuitiva y funcionalidades completas para facilitar la administración de tu tienda.
+**Admin Panel for Sollu Store — E-commerce Management Dashboard**
 
-🚀 Características
-Gestión de Productos: Agregar, editar y eliminar productos con detalles como nombre, descripción, precio, imágenes y stock.
+Este panel de administración está diseñado para gestionar todos los aspectos de una tienda en línea, incluyendo productos, usuarios, cupones, categorías, ajustes del sitio, descuentos, ventas y más.  
+Desarrollado con React, CSS y tecnologías modernas, ofrece una interfaz intuitiva y funcionalidades completas para facilitar la administración de tu tienda.
 
-Gestión de Usuarios: Visualizar y administrar usuarios registrados, incluyendo roles y permisos.
+---
 
-Gestión de Cupones: Crear y gestionar cupones de descuento con fechas de validez y condiciones.
+## 🚀 Características principales
 
-Gestión de Categorías: Organizar productos en categorías para una navegación más eficiente.
+- **Gestión de Productos**  
+  Agregar, editar y eliminar productos con detalles como nombre, descripción, precio, imágenes y stock.
 
-Ajustes del Sitio: Configurar parámetros globales como nombre de la tienda, logotipo, moneda y más.
+- **Gestión de Usuarios**  
+  Visualizar y administrar usuarios registrados, incluyendo roles y permisos.
 
-Gestión del contenido: Modificar el contenido textual e ilustrativo en el sitio.
+- **Gestión de Cupones**  
+  Crear y gestionar cupones de descuento con fechas de validez y condiciones.
 
-Gestión de Descuentos: Aplicar descuentos a productos o categorías específicas.
+- **Gestión de Categorías**  
+  Organizar productos en categorías para una navegación más eficiente.
 
-Panel de Ventas: Registrar nuevas ventas y visualizar el historial de ventas realizadas.
+- **Ajustes del Sitio**  
+  Configurar parámetros globales como nombre de la tienda, logotipo, moneda y más.
 
-Inspección de Ventas: Ver detalles de ventas pasadas, incluyendo productos vendidos, cantidades y totales.
+- **Gestión del Contenido**  
+  Modificar el contenido textual e ilustrativo en el sitio.
 
-Configuración: Modificar permisos, elementos visibles en la página, temas, sonidos, etc.
+- **Gestión de Descuentos**  
+  Aplicar descuentos a productos o categorías específicas.
 
-🛠 Tecnologías Utilizadas
-Frontend: React, CSS
+- **Panel de Ventas**  
+  Registrar nuevas ventas y visualizar el historial de ventas realizadas.
 
-Estado Global: Context API
+- **Inspección de Ventas**  
+  Ver detalles de ventas pasadas, incluyendo productos vendidos, cantidades y totales.
 
-Ruteo: React Router
+- **Configuración Avanzada**  
+  Modificar permisos, elementos visibles en la página, temas, sonidos, etc.
 
-Estilos: CSS personalizado
+---
 
-Autenticación: Implementación con Django y Firebase
+## 🛠 Tecnologías utilizadas
 
-📦 Instalación
-Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
+- **Frontend:** React, CSS personalizado  
+- **Estado Global:** Context API  
+- **Ruteo:** React Router  
+- **Autenticación:** Integración con Django y Firebase
 
-Clona este repositorio:
+---
+
+## 📦 Instalación
+
+Sigue estos pasos para instalar y ejecutar el proyecto localmente:
+
+```bash
+# Clonar repositorio
 git clone https://github.com/alejandro-samuel-mercado/sollu-store-AdminPanel.git
 cd sollu-store-AdminPanel
-Instala las dependencias:
 
+# Instalar dependencias
 npm install
-Inicia la aplicación:
 
+# Iniciar la aplicación
 npm start
-La aplicación estará disponible en http://localhost:3000.
-
-🧪 Pruebas
-Para ejecutar las pruebas:
-npm test
+```
 
 📄 Documentación
 Para una guía más detallada sobre el uso y personalización del panel, consulta la documentación incluida en el repositorio o contacta con el desarrollador principal.
